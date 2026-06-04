@@ -1,6 +1,7 @@
 package com.kafka.consumer;
 
 import com.kafka.consumer.consume.Consumer;
+import com.kafka.consumer.consume.ConsumerWithShutdown;
 import com.kafka.consumer.interfaces.IConsumer;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +16,7 @@ public class ConsumerApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		IConsumer consumer = new Consumer();
+		IConsumer consumer = new ConsumerWithShutdown();
 		consumer.consume();
 	}
 }
